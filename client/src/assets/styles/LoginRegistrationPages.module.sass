@@ -1,0 +1,71 @@
+@mixin _font($font-weight, $size, $line-height)
+  font-family: "Nunito", sans-serif
+  font-weight: $font-weight
+  font-size: $size
+  line-height: $line-height
+
+.mainContainer
+  background-color: #3a90d7
+  display: flex
+  justify-content: center
+  align-items: flex-start
+  padding-top: 40px
+  height: 100vh
+
+  .wrapperContainer
+    background-color: #3a90d7
+    min-width: 300px
+    width: 1200px
+    display: flex
+    flex-direction: column
+
+    .headerPage
+      display: flex
+      flex-direction: row
+      justify-content: space-between
+      align-items: center
+      margin-top: 26px
+      padding-left: 45px
+      padding-right: 100px
+      @media (max-width: 530px)
+        padding-right: 45px
+
+      .logo
+        width: 150px
+
+      .linkLoginContainer
+        border: 1px solid white
+        width: 80px
+        border-radius: 4px
+        display: flex
+        justify-content: center
+        align-items: center
+        height: 40px
+        text-decoration: none
+        @include _font(700, 16px, 16px)
+
+        span
+          color: white
+
+    .headerFormContainer
+      display: flex
+      align-items: center
+      justify-content: center
+      margin-top: 80px
+      flex-direction: column
+
+      .formHeader
+        margin-top: 20px
+        margin-bottom: 28px
+        text-align: center
+        letter-spacing: 0.6px
+        color: white
+        @include _font(700, 34px, 16px)
+
+      .formUnderheader
+        color: white
+        word-spacing: 3px
+        width: 88%
+        margin: 0 0 13px
+        text-align: center
+        @include _font(500, 20px, 27px)
