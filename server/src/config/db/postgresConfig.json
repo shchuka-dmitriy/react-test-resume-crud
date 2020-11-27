@@ -1,0 +1,32 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "postgres",
+    "database": "summaries",
+    "host": "localhost",
+    "dialect": "postgres",
+    "migrationStorage": "json",
+    "seederStorage": "json",
+    "operatorsAliases": "Op"
+  },
+  "test": {
+    "username": "postgres",
+    "password": "postgres",
+    "database": "summaries",
+    "host": "localhost",
+    "dialect": "postgres",
+    "migrationStorage": "json",
+    "seederStorage": "json",
+    "operatorsAliases": "Op"
+  },
+  "production": {
+    "username": "postgres",
+    "password": "postgres",
+    "database": "summaries",
+    "host": "localhost",
+    "dialect": "postgres",
+    "migrationStorage": "json",
+    "seederStorage": "json",
+    "operatorsAliases": "Op"
+  }
+}
