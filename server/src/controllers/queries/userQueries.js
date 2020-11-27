@@ -1,0 +1,38 @@
+const bd = require('../../models');
+
+import {ServerError, ResourceNotFoundError} from '../../utils/errors';
+const bcrypt = require('bcrypt');
+
+module.exports.updateUser = async (data, userId, transaction) => {
+    const [updatedCount, [updatedUser]] = await bd.User.update(data,
+        { where: { id: userId }, returning: true, transaction });
+    if (updatedCount !== 1) {
+        throw new ServerError('cannot update user');
+    }
+    return updatedUser.dataValues;
+};
+
+module.exports.findUser = async (predicate, transaction) => {
+    const result = await bd.User.findOne({ where: predicate, transaction });
+    if ( !result) {
+        throw new ResourceNotFoundError('user with this data didn`t exist');
+    } else {
+        return result.get({ plain: true });
+    }
+};
+
+module.exports.userCreation = async (data) => {
+    const newUser = await bd.User.create(data);
+    if ( !newUser) {
+        throw new ServerError('server error on user creation');
+    } else {
+        return newUser.get({ plain: true });
+    }
+};
+
+module.exports.passwordCompare = async (pass1, pass2) => {
+    const passwordCompare = await bcrypt.compare(pass1, pass2);
+    if ( !passwordCompare) {
+        throw new ResourceNotFoundError('Wrong password');
+    }
+};
