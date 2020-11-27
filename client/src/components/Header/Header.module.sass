@@ -1,0 +1,115 @@
+@mixin _font($font-weight, $size, $line-height)
+  font-family: "Nunito", sans-serif
+  font-weight: $font-weight
+  font-size: $size
+  line-height: $line-height
+
+.headerContainer
+  display: flex
+  flex-direction: column
+  justify-content: flex-start
+  width: 100%
+
+  .navContainer
+    width: 100%
+    margin: 0 auto
+    display: flex
+    justify-content: space-around
+    align-items: center
+    border-bottom: 1px solid #ebebeb
+    @media(max-width: 920px)
+      justify-content: center
+    @media(max-width: 700px)
+      justify-content: flex-start
+
+  .loginSignUpHeaders
+    display: flex
+    flex-direction: row
+    align-items: center
+    justify-content: space-around
+    border: 2px solid #b8b8b8
+    margin-bottom: 13px
+    background-color: rgb(83, 107, 160)
+    height: 60px
+
+    .userButtonsContainer
+      padding: 0 10px 0 10px
+      margin-left: 100px
+      align-items: center
+      justify-content: center
+      display: flex
+      border: 2px solid #b8b8b8
+      height: 60px
+      @media(max-width: 600px)
+        margin-left: 60px
+      @media(max-width: 400px)
+        margin-left: 20px
+      @media(max-width: 320px)
+        margin-left: 0
+
+      .userInfo
+        display: flex
+        justify-content: center
+        align-items: center
+
+        span
+          @include _font(700, 16px, 16px)
+        span + span
+          border-left: 2px solid #b8b8b8
+
+      a
+        height: 60px
+
+      .btn
+        padding: 0 15px
+        color: #ebebeb
+        height: 60px
+        display: flex
+        justify-content: center
+        align-items: center
+        @include _font(700, 14px, 16px)
+
+      .buttonContainer
+        display: flex
+        justify-content: center
+        align-items: center
+
+      .buttonContainer + .buttonContainer
+        margin-left: 10px
+
+    .numberContainer
+      justify-content: center
+      align-items: center
+      padding: 0 15px
+      margin-left: 120px
+      height: 60px
+      @media(max-width: 600px)
+        margin-left: 10px
+      @media(max-width: 360px)
+        padding: 0 5px
+        margin-left: 0
+
+      .logo
+        height: 60px
+
+      span
+        color: #337ab7
+        font-size: 14px
+        margin-left: 10px
+        @media(max-width: 360px)
+          font-size: 12px
+
+.button
+  border-radius: 5px
+  border: 0 none
+  color: #fff
+  cursor: pointer
+  font-size: 14px
+  font-weight: 700
+  height: 36px
+  padding: 6px 12px
+  text-align: center
+  width: 94px
+  background: linear-gradient(#fea94a,#ff6808)
+  &:hover
+    background: linear-gradient(#ffb95a,#ff7818)
