@@ -1,0 +1,193 @@
+@import '../../assets/errorStyles'
+
+@mixin _font($font-weight, $size, $line-height)
+  font-family: "Nunito", sans-serif
+  font-weight: $font-weight
+  font-size: $size
+  line-height: $line-height
+
+.fieldWarning
+  display: flex
+  flex-direction: row
+  justify-content: center
+  align-items: center
+  color: #f10a05
+  border: 1px solid #b72522
+  margin-top: 7px
+  margin-bottom: 15px
+  padding-bottom: 5px
+  padding-top: 5px
+  text-align: center
+  border-radius: 2px
+  @include _font(700, 17px, 15px)
+
+.topFieldLabel
+  @extend .fieldLabel
+  display: flex
+  justify-content: center
+
+.fieldLabel
+  box-sizing: border-box
+  margin: 0 10px 15px 20px
+  text-align: center
+  color: #8e8e90
+  @include _font(700, 16px, 30px)
+  @media(max-width: 510px)
+    margin: 0
+
+.loginForm
+  max-width: 580px
+  width: 80%
+  display: flex
+  flex-direction: column
+  align-items: stretch
+  justify-content: center
+  margin: 0 auto 15px
+  padding: 5px
+  border-radius: 10px
+  box-shadow: 0 0 30px -9px rgba(0,0,0,0.5)
+  background: rgba(245, 243, 243, 0.8)
+  @media(max-width: 680px)
+    width: 100%
+    margin-left: 5px
+    margin-right: 5px
+
+  form
+    margin: 15px
+
+    .submitContainerWrapper
+      margin-top: 15px
+      width: 100%
+      display: flex
+      justify-content: space-between
+
+      .submitContainer
+        margin: 0 auto
+        border-radius: 5px
+        display: flex
+        justify-content: center
+        align-items: center
+        background-color: #6b8ab1
+        height: 64px
+        padding: 0
+        border: 0
+        width: 48%
+        color: white
+        @include _font(700, 18px, 16px)
+        transition: all 0.5s
+        &:hover
+          background-color: #415DCB
+
+        .submitButton
+          font-size: 16px
+          font-weight: 700
+          color: white
+          text-transform: uppercase
+
+    .inputContainer
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-self: stretch
+      margin: auto
+
+      .input
+        background-color: #eeeeee
+        border: none
+        border-radius: 10px
+        color: #9ca8b7
+        font-size: 18px
+        padding: 23px 20px 23px 20px
+        outline: none
+        margin-bottom: 15px
+        flex: 1
+        @media(max-width: 1400px)
+          align-self: normal
+
+      .notValid
+        border: 2px solid red !important
+
+      .valid
+        border: 2px solid green
+
+      .inputHeader
+        display: inline-block
+        font-size: 19px
+        color: #585859
+        font-weight: 700
+        margin-top: 12px
+        margin-bottom: 5px
+
+    .error
+      @extend .error
+
+    .errorValid
+      @extend .errorValid
+
+.imageUploadContainer
+  display: flex
+  flex-direction: column
+  justify-content: flex-start
+
+  .commonImgStyle
+    width: 50%
+    align-self: center
+    margin: 10px
+    border: 1px solid #d9cfcf
+    border-radius: 5px
+
+  .uploadInputContainer
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: flex-start
+    margin-bottom: 10px
+
+    span
+      font-size: 14px
+      font-weight: 700
+      margin-top: 10px
+      margin-bottom: 10px
+      color: red
+
+    input
+      margin-top: 10px
+      display: none
+      border: none
+      border-radius: 8px
+      color: white
+      background-color: #66afe9
+
+    label
+      margin: 0 auto
+      padding: 10px 15px
+      color: #d9cfcf
+      background-color: #455a89
+      border-radius: 4px
+      align-self: flex-start
+      cursor: pointer
+      @include _font(700, 14px, 14px)
+
+      &:hover
+        color: white
+        background-color: #f27e51
+
+.photosContainer
+  display: flex
+  flex-direction: column
+
+  .mainAvatar
+    align-self: center
+    height: 350px
+    margin: 20px 0
+
+  .avatar
+    align-self: center
+    height: 80px
+    margin: 20px 0
+
+.notMainPhotosContainer
+  display: flex
+  justify-content: center
+  flex-direction: row
+  flex-wrap: wrap
