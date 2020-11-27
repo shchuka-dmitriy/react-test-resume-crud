@@ -1,0 +1,51 @@
+@import "../../assets/breakpoints"
+
+@mixin _font($font-weight, $size, $color)
+  font-family: "Nunito", sans-serif
+  font-weight: $font-weight
+  font-size: $size
+  color: $color
+
+.mainContainer
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  border-radius: 5px
+  width: 100%
+  box-shadow: 0 0 30px -9px rgba(0, 0, 0, 0.8)
+  background: rgba(246, 238, 236, 0.5)
+  @media(max-width: 420px)
+    flex-direction: column
+    justify-content: flex-start
+    align-items: center
+
+  .infoContainer
+    display: flex
+    flex-direction: column
+    width: 100%
+
+    .infoBlock
+      display: flex
+      flex-direction: row
+      margin: 0 20px 25px
+      @media(max-width: $md)
+        flex-direction: column
+	  
+      .label
+        font-size: 16px
+        flex-grow: 1
+        width: 15%
+        margin-right: 20px
+        @include _font(600, 16px, #8e755b)
+        @media(max-width: $md)
+          width: 100%
+          margin-bottom: 10px
+		
+      .info
+        flex-grow: 5
+        width: 75%
+        @include _font(600, 16px, #8e8e90)
+        line-height: 20px
+        @media(max-width: $md)
+          width: 100%
